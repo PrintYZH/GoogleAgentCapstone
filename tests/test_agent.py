@@ -1,5 +1,7 @@
 import uuid
 import asyncio
+from dotenv import load_dotenv
+load_dotenv()
 
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
@@ -11,7 +13,7 @@ USER_NAME = "TestUser"
 
 async def run_session(
     runner_instance: Runner,
-    user_queries: list[str] | str = None,
+    user_queries: list[str] | str | None = None,
     session_name: str = "default",
 ):
     print(f"\n ### Session: {session_name}")
@@ -44,7 +46,7 @@ async def run_session(
 
             # Stream the agent's response asynchronously
             async for event in runner_instance.run_async(
-                user_id=USER_NAME, session_id=session.id, new_message=query
+                user_id=USER_NAME, session_id=session_id, new_message=query
             ):
                 # Check if the event contains valid content
                 if event.content and event.content.parts:
@@ -73,7 +75,8 @@ async def main():
 
     await run_session(
         runner,[
-        "Hi, I want to plan a trip but I'm not sure where to go. I like beaches and historical sites. My budget is around $2000 and I can travel anytime in the next 3 months. Can you help me decide on a destination and plan my itinerary?",
+        "Hi, I want to plan a trip but I'm not sure where to go. I am from Thailand. I like beaches and historical sites. My budget is around $2000 and I can travel on August 29th for 5 days. Can you help me decide on a destination and plan my itinerary?",
+        "Yes it's all correct.",
         "I like the second destination you suggested. Can you provide more details about it and help me plan a day-by-day itinerary for a week-long trip there?",
         "I would prefer to stay in mid-range hotels and I'm interested in local cuisine and cultural experiences. Can you include these preferences in the itinerary?"]
         , session_name=session_id,) 

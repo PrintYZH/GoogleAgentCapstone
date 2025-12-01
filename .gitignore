@@ -9,3 +9,9 @@ venv/
 # ignore Python cache files
 __pycache__/
 .pytest_cache/
+
+# ignore distribution/build files
+*.egg-info/
+
+# ignore log files
+*.log

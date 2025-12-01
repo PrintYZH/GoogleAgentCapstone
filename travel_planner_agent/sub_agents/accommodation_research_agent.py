@@ -1,7 +1,7 @@
 from ..config import agentConfig, retryConfig
 from google.adk.agents import LlmAgent
 from google.adk.models.google_llm import Gemini
-from google.adk.tools import google_search
+from google.adk.tools.google_search_tool import google_search
 
 accommodation_research_agent = LlmAgent(
     model = Gemini(model = agentConfig.working_model, retry_options=retryConfig),
