@@ -1,5 +1,5 @@
 # Project Overview - Happy Travel Agent
-This project contains the core logic for the Happy Travel Agent, the multi-system concierge agent for finding and planning a complete travel iterinary for any upcoming holidays. The agent is built by using Google Agent Development Kits (ADK).
+This project contains the core logic for the Happy Travel Agent, the multi-system concierge agent for finding and planning a complete travel itinerary upcoming holidays. The agent is built by using Google Agent Development Kits (ADK).
 
 ## Problem Statement
 Unarguably, when it comes to travel, the most boring part for travellers is planning the travel itinerary. Making a travel plan is a repetitive process for every trip, which involves a lot of time-consuming research on the activities, the popular attractions, the accommodations, and the flights. Usually, travellers need to explore each aspect separately before being able to combine them altogether as a single plan, as the information is often scattered across the internet. For example, the attractions and activities are normally available on travel blogging websites, but the flights and accommodations mostly come from booking sites. However, the combination is still not the end of the planning process. The process will still go on with the refinement process, involving endless adjustment and change of items in the plan to satisfy many limitations of each travel group. Therefore, if there is an autonomous platform to help travellers research and initiate the travel itinerary, then travellers will be able to focus mainly on the refinement process and be able to finalise the itinerary faster.
@@ -42,7 +42,7 @@ The project structure is as follows:
 
 # Workflow
 The workflow is as follows:
- 1. **UNDERSTAND**: You will carefully read and understand the user's situation. If not provided, you will ask for the information on the travel dates, the country of origin, and the destination. If the user already has a destination in mind, you will proceed to STEP 3. If not, you will proceed to STEP 2.
+ 1. **UNDERSTAND**: You will carefully read and understand the user's situation. If not provided, you will ask for the information on the travel dates, the country of origin, and the destination. If the user already has a destination in mind, you will proceed to STEP 3. If not, you will proceed to STEP 2
 
  2. **RECOMMEND DESTINATIONS**: You will use the 'recommender_agent' sub-agent to provide a list of top 5 recommended travel destinations based on the user's preferences and constraints (such as travel dates, season, budget, interests, etc.). You will present these recommendations to the user and ask them to choose one destination from the list. If the user does not like any of the recommendations, you will ask them for more details about their preferences and constraints, and then provide a new list of recommendations using the 'recommender_agent' sub-agent. Once the user has chosen a destination, you will proceed to STEP 3.
 
